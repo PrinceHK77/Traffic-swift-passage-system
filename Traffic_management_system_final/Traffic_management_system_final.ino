@@ -51,7 +51,7 @@ void setup() {
   lcd.init();
   lcd.backlight(); // Turn on backlight
   lcd.setCursor(0, 0);
-  lcd.print("Traffic Control");
+  lcd.print("Traffic signal Control");
 }
 
 void handleEmergency() {
@@ -67,14 +67,7 @@ void handleEmergency() {
 
   // After the emergency duration, resume normal traffic flow
   resumeNormal();
-  
-  // Print emergency message on LCD
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Ambulance passing!");
-  delay(Message);
 }
-
 
 void resumeNormal() {
   // Resume normal traffic flow
@@ -84,7 +77,6 @@ void resumeNormal() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Normal signal!");
-  delay(Message);
 }
 
 void loop() {
@@ -92,10 +84,6 @@ void loop() {
     char signal = Serial.read();
     switch (signal) {
       case 'E': // Emergency signal from Python
-        lcd.clear();
-        lcd.setCursor(0, 0);
-        lcd.print("Alert changing signals");
-        handleEmergency();
         break;
       case 'N': // Normal signal from Python
         resumeNormal();
@@ -246,17 +234,17 @@ void normalTrafficFlow() {
   checkEmergencyDuringTransition();
 }
 
-
 bool checkEmergencyDuringTransition() {
   // Check for emergency message during transition
   while (Serial.available()) {
     char signal = Serial.read();
     if (signal == 'E') {
       // Emergency signal received, switch to emergency mode
-      turnOffLights();
       lcd.clear();
       lcd.setCursor(0, 0);
-      lcd.print("Ambulance Arrival!");
+      lcd.print("Emergency!");
+      delay(Message);
+      turnOffLights();
       handleEmergency();
       return true; // Return true to stop the current traffic flow
       
@@ -279,4 +267,4 @@ void turnOffLights() {
   digitalWrite(redPin4, LOW);
   digitalWrite(yellowPin4, LOW);
   digitalWrite(greenPin4, LOW);
-}
+}  

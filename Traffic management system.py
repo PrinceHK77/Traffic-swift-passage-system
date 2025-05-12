@@ -5,8 +5,9 @@ import numpy as np
 # Load the trained model
 model = load_model('keras_model.h5')
 
-# Open a video file or captupipre device (0 for webcam)
-cap = cv2.VideoCapture('video1.mp4')
+
+# Open the webcam stream
+cap = cv2.VideoCapture(0)
 
 while True:
     # Read a frame from the video
