@@ -1,87 +1,57 @@
-🚦 Traffic Signal Swift Passage System
-
+# 🚦 Traffic Signal Swift Passage System
 
 ![image](https://github.com/user-attachments/assets/e07b349d-761b-4ca4-a3ef-1652ab38701b)
 
 
+An AI-driven system designed to give emergency vehicles priority access at intersections by dynamically adjusting traffic signals using Computer Vision and IoT. This system ensures seamless and swift passage of ambulances, fire trucks, and police vehicles — reducing delays and saving lives.
 
-AI-Driven Emergency Vehicle Priority System Using IoT and Computer Vision
+---
 
-🌐 Overview
-In emergencies, every second counts. Traditional traffic systems often delay emergency responders due to static signal cycles.
+## 🌐 Project Overview
 
-This project introduces a smart traffic signal management system that leverages Computer Vision, IoT, and Machine Learning to detect emergency vehicles in real-time and dynamically adjust traffic signals — ensuring uninterrupted, swift passage through intersections.
+Traditional traffic lights follow fixed cycles, which can delay emergency response during peak hours. This system solves that by:
 
-Designed for urban traffic management, this system ensures higher efficiency, faster response times, and safer roads.
+- 🧠 Detecting emergency vehicles in real-time via a live video feed
+- ⚙️ Automatically adjusting the traffic signal to green
+- 🌍 Leveraging IoT controllers for live signal manipulation
+- 🖥️ Providing a web dashboard interface for visualization and monitoring
 
-💡 Key Features
-🚓 Emergency Vehicle Detection using real-time video feed
+---
 
-⚙️ Signal Automation to switch traffic lights dynamically
+## 💡 Key Features
 
-🌐 IoT Integration for sensor communication and control
+✅ Real-time Emergency Vehicle Detection using CV & ML  
+🔄 Dynamic Traffic Light Control using IoT  
+📶 Sensor Communication for Smart Signal Coordination  
+🧠 Custom ML Model for Emergency Vehicle Classification  
+🕹️ Flask-based Web Interface for Monitoring & Logs  
+⏱️ Reduced Congestion & Improved Emergency Response Time  
 
-🧠 ML Model Training for emergency vehicle classification
+---
 
-🛑 Reduces congestion & manual signal override
+## 🧰 Technologies Used
 
-🖥️ Web-based interface built using Flask
+| Domain             | Tech Stack                         |
+|--------------------|-------------------------------------|
+| Computer Vision     | OpenCV                             |
+| Machine Learning    | TensorFlow / Keras / Scikit-learn  |
+| IoT Communication   | MQTT / Wi-Fi Sensors / Arduino     |
+| Web Interface       | Flask, HTML, CSS, JS               |
+| Programming Language| Python                             |
 
-🧠 Technologies Used
-Computer Vision (OpenCV)
+---
 
-Machine Learning (Custom trained models)
+## 🧭 System Architecture
 
-IoT Sensors
-
-Artificial Intelligence
-
-Flask (Web Framework)
-
-Python
-
-🏗️ System Architecture
-plaintext
-Copy code
-📹 Camera Feed
+```plaintext
+📹 Live Camera Feed
      ↓
-🔍 CV + ML Detection (Emergency Vehicle?)
+🔍 Emergency Vehicle Detection (CV + ML)
      ↓
-✅ Yes → 🟢 Green Light for Lane
-❌ No  → 🔴 Maintain Current Signal
+✅ Detected → 🟢 Green Light on Lane
+❌ Not Detected → 🔴 Maintain Default Cycle
      ↓
-🌐 IoT Signal Controller
+🌐 IoT Controller Adjusts Signal
      ↓
-📊 Web Dashboard (Flask)
-📂 Project Structure
-📁 Traffic-Signal-Swift-Passage
-├── app.py                  # Flask server
-├── detect_vehicle.py       # Emergency vehicle detection logic
-├── iot_controller.py       # Signal automation via IoT
-├── model/                  # Trained ML models
-├── static/                 # Web assets
-├── templates/              # HTML templates
-└── utils/                  # Helper modules (logging, data)
+📊 Web Dashboard via Flask
 
-
-# Start the application
-python app.py
-🛠️ Skills Demonstrated
-Machine Learning
-
-Internet of Things (IoT)
-
-Computer Vision
-
-AI-based Automation
-
-Flask Web Development
-
-📈 Real-World Applications
-🚑 Ambulance and fire truck prioritization
-
-🚓 Police convoy routing
-
-🏥 Critical healthcare logistics
-
-🛣️ Smart City infrastructure
